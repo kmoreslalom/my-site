@@ -73,9 +73,12 @@ body::before{
 .controls{display:flex;justify-content:center;margin-top:1rem}
 .theme-toggle{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:0.45rem 0.6rem;border-radius:999px;font-size:1rem;color:var(--text);cursor:pointer}
 
-.card-footer{margin-top:1.25rem;font-size:0.85rem;color:var(--muted)}
-
-/* make card lighter in light theme */
+  .about-details{margin:1.5rem 0;text-align:left}
+  .about-details h2{margin-bottom:0.75rem;font-size:1.05rem}
+  .about-details p{margin-bottom:1rem;color:var(--muted);line-height:1.75}
+  .about-details ul{list-style:none;padding:0;display:grid;gap:0.5rem}
+  .about-details li{background:rgba(255,255,255,0.06);padding:0.85rem 1rem;border-radius:12px;color:var(--text)}
+  
 body[data-theme="light"] .card{box-shadow:0 8px 30px rgba(0,0,0,0.06)}
 
 @media (prefers-reduced-motion: reduce){body::before, .link-btn, .theme-toggle{animation:none;transition:none}}
