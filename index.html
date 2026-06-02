@@ -155,7 +155,7 @@
           },
           (error) => {
             if (error.code === error.PERMISSION_DENIED) {
-              setError('Location permission denied. Please enable it in browser settings.', true);
+              setError('Enable location to see your weather.', true);
             } else if (error.code === error.TIMEOUT) {
               setError('Location request timed out. Please try again.', true);
             } else {
