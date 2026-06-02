@@ -14,6 +14,7 @@ import {
   VBtn,
   VIcon,
 } from 'vuetify/components'
+import LinkButton from '@/components/LinkButton.vue'
 
 const theme = useTheme()
 const isDark = computed(() => theme.global.name.value === 'dark')
@@ -57,28 +58,16 @@ onMounted(() => {
 
               <v-row class="px-6 pb-6" dense>
                 <v-col cols="12">
-                  <v-btn block height="56" variant="tonal" class="mb-4" href="https://krissymorency.myportfolio.com" target="_blank" rel="noopener noreferrer">
-                    <v-icon left>mdi-palette</v-icon>
-                    Portfolio
-                  </v-btn>
+                  <LinkButton label="Portfolio" url="https://krissymorency.myportfolio.com" icon="mdi-palette" />
                 </v-col>
                 <v-col cols="12">
-                  <v-btn block height="56" variant="tonal" class="mb-4" href="https://dribbble.com/" target="_blank" rel="noopener noreferrer">
-                    <v-icon left>mdi-basketball</v-icon>
-                    Dribbble
-                  </v-btn>
+                  <LinkButton label="Dribbble" url="https://dribbble.com/" icon="mdi-basketball" />
                 </v-col>
                 <v-col cols="12">
-                  <v-btn block height="56" variant="tonal" class="mb-4" href="https://linkedin.com/in/krissy-morency" target="_blank" rel="noopener noreferrer">
-                    <v-icon left>mdi-linkedin</v-icon>
-                    LinkedIn
-                  </v-btn>
+                  <LinkButton label="LinkedIn" url="https://linkedin.com/in/krissy-morency" icon="mdi-linkedin" />
                 </v-col>
                 <v-col cols="12">
-                  <v-btn block height="56" variant="tonal" href="mailto:kfmorency@yahoo.com">
-                    <v-icon left>mdi-email</v-icon>
-                    Email
-                  </v-btn>
+                  <LinkButton label="Email" url="mailto:kfmorency@yahoo.com" icon="mdi-email" />
                 </v-col>
               </v-row>
 
