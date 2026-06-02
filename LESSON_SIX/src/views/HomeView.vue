@@ -60,9 +60,7 @@ onMounted(() => {
                 <v-col cols="12">
                   <LinkButton label="Portfolio" url="https://krissymorency.myportfolio.com" icon="mdi-palette" />
                 </v-col>
-                <v-col cols="12">
-                  <LinkButton label="Dribbble" url="https://dribbble.com/" icon="mdi-basketball" />
-                </v-col>
+                
                 <v-col cols="12">
                   <LinkButton label="LinkedIn" url="https://linkedin.com/in/krissy-morency" icon="mdi-linkedin" />
                 </v-col>
