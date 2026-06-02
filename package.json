@@ -1,0 +1,7 @@
+{
+  "name": "my-site-monorepo",
+  "private": true,
+  "scripts": {
+    "build": "cd LESSON_EIGHT/my-dashboard && npm ci && npm run build"
+  }
+}
