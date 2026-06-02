@@ -287,10 +287,10 @@ const formatChange = (raw: number | null) => {
     </v-app-bar>
 
     <v-container fluid class="py-6">
-      <v-row class="mb-4" align="stretch" dense>
-        <v-col cols="12" sm="6" md="3" v-for="card in summaryCards" :key="card.title">
-          <v-card elevation="4" rounded="lg" class="pa-4 summary-card">
-            <div class="d-flex justify-space-between align-center mb-4">
+      <v-row class="mb-6" align="stretch">
+        <v-col cols="12" sm="6" md="3" lg="3" v-for="card in summaryCards" :key="card.title">
+          <v-card elevation="4" rounded="lg" class="pa-6 summary-card">
+            <div class="d-flex justify-space-between align-center mb-6">
               <div>
                 <div class="text-subtitle-2 text-uppercase text-opacity-70">{{ card.title }}</div>
                 <div class="summary-value">{{ formatValue(card.value, card.format) }}{{ card.suffix }}</div>
@@ -367,5 +367,24 @@ const formatChange = (raw: number | null) => {
 }
 .chart-card {
   min-height: 380px;
+}
+\n<style scoped>
+.summary-card {
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.summary-card .summary-value {
+  font-size: 1.8rem;
+}
+.chart-card {
+  min-height: 420px;
+}
+
+@media (min-width: 1400px) {
+  .summary-card {
+    min-height: 240px;
+  }
 }
 </style>
