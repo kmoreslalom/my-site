@@ -15,7 +15,6 @@ import {
   VIcon,
 } from 'vuetify/components'
 import LinkButton from '@/components/LinkButton.vue'
-import ProfileCard from '@/components/ProfileCard.vue'
 
 const theme = useTheme()
 const isDark = computed(() => theme.global.name.value === 'dark')
@@ -42,13 +41,20 @@ onMounted(() => {
           <v-col cols="12" md="8" lg="5">
             <v-card class="mx-auto home-card" elevation="10" rounded="lg">
               <v-row align="center" justify="space-between" class="pa-6">
-                <ProfileCard name="Krissy Morency" bio="Designer building elegant digital experiences for brands and businesses." initials="KM" />
+                <v-avatar size="96" class="elevation-3">
+                  <span class="text-h6 font-weight-bold">KM</span>
+                </v-avatar>
 
                 <v-btn variant="tonal" size="large" elevation="2" @click="toggleTheme">
                   <v-icon left>{{ isDark ? 'mdi-white-balance-sunny' : 'mdi-weather-night' }}</v-icon>
                   {{ isDark ? 'Light mode' : 'Dark mode' }}
                 </v-btn>
               </v-row>
+
+              <v-card-title class="text-h5 pt-0">Krissy Morency</v-card-title>
+              <v-card-text class="pb-6">
+                Designer building elegant digital experiences for brands and businesses.
+              </v-card-text>
 
               <v-row class="px-6 pb-6" dense>
                 <v-col cols="12">
