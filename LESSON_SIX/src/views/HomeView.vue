@@ -35,16 +35,16 @@ onMounted(() => {
 <template>
   <v-app>
     <v-main>
-      <v-container class="fill-height" fluid>
-        <v-row align="center" justify="center">
+      <v-container class="fill-height pa-0" fluid>
+        <v-row class="fill-height" align="center" justify="center">
           <v-col cols="12" md="8" lg="5">
-            <v-card class="mx-auto" elevation="10" rounded="lg">
+            <v-card class="mx-auto home-card" elevation="10" rounded="lg">
               <v-row align="center" justify="space-between" class="pa-6">
                 <v-avatar size="96" class="elevation-3">
                   <span class="text-h6 font-weight-bold">KM</span>
                 </v-avatar>
 
-                <v-btn variant="tonal" size="small" @click="toggleTheme">
+                <v-btn variant="tonal" size="large" elevation="2" @click="toggleTheme">
                   <v-icon left>{{ isDark ? 'mdi-white-balance-sunny' : 'mdi-weather-night' }}</v-icon>
                   {{ isDark ? 'Light mode' : 'Dark mode' }}
                 </v-btn>
@@ -57,25 +57,25 @@ onMounted(() => {
 
               <v-row class="px-6 pb-6" dense>
                 <v-col cols="12">
-                  <v-btn block variant="tonal" class="mb-3" href="https://krissymorency.myportfolio.com" target="_blank" rel="noopener noreferrer">
+                  <v-btn block height="56" variant="tonal" class="mb-4" href="https://krissymorency.myportfolio.com" target="_blank" rel="noopener noreferrer">
                     <v-icon left>mdi-palette</v-icon>
                     Portfolio
                   </v-btn>
                 </v-col>
                 <v-col cols="12">
-                  <v-btn block variant="tonal" class="mb-3" href="https://dribbble.com/" target="_blank" rel="noopener noreferrer">
+                  <v-btn block height="56" variant="tonal" class="mb-4" href="https://dribbble.com/" target="_blank" rel="noopener noreferrer">
                     <v-icon left>mdi-basketball</v-icon>
                     Dribbble
                   </v-btn>
                 </v-col>
                 <v-col cols="12">
-                  <v-btn block variant="tonal" class="mb-3" href="https://linkedin.com/in/krissy-morency" target="_blank" rel="noopener noreferrer">
+                  <v-btn block height="56" variant="tonal" class="mb-4" href="https://linkedin.com/in/krissy-morency" target="_blank" rel="noopener noreferrer">
                     <v-icon left>mdi-linkedin</v-icon>
                     LinkedIn
                   </v-btn>
                 </v-col>
                 <v-col cols="12">
-                  <v-btn block variant="tonal" href="mailto:kfmorency@yahoo.com">
+                  <v-btn block height="56" variant="tonal" href="mailto:kfmorency@yahoo.com">
                     <v-icon left>mdi-email</v-icon>
                     Email
                   </v-btn>
@@ -92,7 +92,8 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.v-card {
-  min-height: 100%;
+.home-card {
+  width: 100%;
+  max-width: 520px;
 }
 </style>
