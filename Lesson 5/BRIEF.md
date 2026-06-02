@@ -14,6 +14,7 @@ I want to send people here from my social profiles.
 - Dark mode by default with a light/dark toggle
 - Smooth hover animation on the link buttons
 - Google fonts: Inter
+- Use orange and yellow gradients in light mode, purple and blues in dark mode. keep it nice and pretty
 
 ## Links
 Display these as stacked buttons, full-width within the card:
