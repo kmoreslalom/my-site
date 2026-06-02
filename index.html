@@ -97,6 +97,7 @@
     const emojiEl = document.getElementById('weather-emoji');
     const weatherCard = document.getElementById('weather-card');
     const retryBtn = document.getElementById('retry-geo');
+    const forecastEl = document.getElementById('forecast');
 
     const weatherCodes = [
       { codes: [0], icon: '☀️', label: 'Clear sky' },
@@ -132,10 +133,42 @@
       descEl.textContent = 'Weather unavailable';
       metaEl.textContent = message;
       retryBtn.style.display = showRetry ? 'block' : 'none';
+      forecastEl.innerHTML = '';
+    }
+
+    function getDayName(dateStr) {
+      const d = new Date(dateStr + 'T00:00:00');
+      return d.toLocaleDateString(undefined, { weekday: 'short' });
+    }
+
+    function renderForecast(daily) {
+      if (!daily || !daily.time) {
+        forecastEl.innerHTML = '';
+        return;
+      }
+
+      const times = daily.time;
+      const max = daily.temperature_2m_max;
+      const min = daily.temperature_2m_min;
+      const codes = daily.weathercode;
+
+      let html = '<div class="forecast-grid-inner">';
+      for (let i = 0; i < times.length; i++) {
+        const info = getWeatherInfo(codes[i]);
+        html += `
+          <div class="forecast-item">
+            <div class="day">${getDayName(times[i])}</div>
+            <div class="icon">${info.icon}</div>
+            <div class="temps"><span class="hi">${Math.round(max[i])}°</span><span class="lo">${Math.round(min[i])}°</span></div>
+          </div>
+        `;
+      }
+      html += '</div>';
+      forecastEl.innerHTML = html;
     }
 
     function fetchWeather(lat, lon) {
-      const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&temperature_unit=fahrenheit&timezone=auto`;
+      const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&daily=temperature_2m_max,temperature_2m_min,weathercode&forecast_days=5&temperature_unit=fahrenheit&timezone=auto`;
       fetch(url)
         .then((response) => response.json())
         .then((data) => {
@@ -143,6 +176,10 @@
             setWeather(data.current_weather);
           } else {
             setError('Unable to load weather right now.');
+          }
+
+          if (data.daily) {
+            renderForecast(data.daily);
           }
         })
         .catch(() => setError('Unable to load weather right now.'));

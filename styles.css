@@ -139,6 +139,49 @@ nav a:hover {
   background: rgba(255, 105, 97, 0.14);
 }
 
+/* Forecast grid inside weather card */
+.forecast-grid {
+  margin-top: 1rem;
+}
+
+.forecast-grid-inner {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+
+.forecast-item {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 0.6rem;
+  width: calc((100% - 2rem) / 5);
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.forecast-item .day {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  font-size: 0.85rem;
+  opacity: 0.95;
+}
+
+.forecast-item .icon {
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+}
+
+.forecast-item .temps {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  font-size: 0.85rem;
+}
+
+.forecast-item .hi { font-weight: 700; }
+.forecast-item .lo { opacity: 0.85; }
+
 .hero-content h1 {
   font-size: 3.5rem;
   margin-bottom: 1rem;
@@ -375,6 +418,9 @@ footer p {
     margin-top: 1rem;
     display: block;
   }
+
+  .forecast-grid-inner { flex-wrap: wrap; }
+  .forecast-item { width: 48%; margin-bottom: 0.5rem; }
 
   section h2 {
     font-size: 2rem;
